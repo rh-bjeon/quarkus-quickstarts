@@ -1,0 +1,14 @@
+[Unit]
+Description=Quarkus-app
+After=network.target postgresql.service
+
+[Service]
+ExecStart=/bin/bash -c "exec java -jar /root/quarkus-quickstarts/hibernate-reactive-panache-quickstart/target/quarkus-app/quarkus-run.jar"
+Restart=on-failure
+RestartSec=10
+
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
