@@ -112,35 +112,24 @@
 <body ng-app="FruitManagement" ng-controller="FruitManagementController">
 
 <div class="container">
-    <h1>Hibernate Reactive with Panache quickstart - Quarkus</h1>
-    <p>This application demonstrates how a Quarkus application implements a CRUD endpoint to manage fruits using Hibernate Reactive with Panache.
-        This management interface invokes the CRUD service endpoint, which interacts with a database using JPA and several other well known libraries.
+    <h1>Quarkus 샘플 애플리케이션</h1>
+    <p>이 애플리케이션은 DB와 상호작용하는 CRUD 서비스 엔드포인트를 호출하여 과일 목록을 관리하는 샘플 Quarkus 애플리케이션입니다.
     </p>
-    <p>Behind the scenes, we have:
-        <ul>
-            <li>Hibernate Reactive with Panache taking care of all CRUD operations</li>
-            <li>RESTEasy powering the REST API</li>
-            <li>ArC, a CDI based dependency injection framework</li>
-            <li>The Undertow webserver</li>
-            <li>Some magic bytecode generation plugged in the compiler...</li>
-        </ul>
-    </p>
-
-    <h3>Add/Edit a fruit</h3>
+    <h3>과일을 추가/삭제</h3>
     <form ng-submit="update()">
         <div class="row">
             <div class="col-6"><input type="text" placeholder="Name" ng-model="form.name" size="60"/></div>
         </div>
-        <input type="submit" value="Save"/>
+        <input type="submit" value="저장"/>
     </form>
 
-    <h3>Fruit List</h3>
+    <h3>과일 목록</h3>
     <div class="row">
-        <div class="col-2">Name</div>
+        <div class="col-2">이름</div>
     </div>
     <div class="row" ng-repeat="fruit in fruits">
         <div class="col-2">{{ fruit.name }}</div>
-        <div class="col-8"><a ng-click="edit( fruit )" class="btn">Edit</a> <a ng-click="remove( fruit )" class="btn">Remove</a>
+        <div class="col-8"><a ng-click="edit( fruit )" class="btn">편집</a> <a ng-click="remove( fruit )" class="btn">삭제</a>
         </div>
     </div>
 </div>
